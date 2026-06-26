@@ -10,7 +10,7 @@
 
 适合 FYPro、StoreClaw、图生视频、TikTok creator demo、UGC 广告前期分镜。
 
-关键规则：产品图是 source of truth。故事版必须严格延续产品外观；脚本文字必须严格对应故事版。
+关键规则：产品图是 source of truth。故事版必须严格延续产品外观；脚本文字必须严格对应故事版，并且脚本表里的屏幕字幕和旁白 / 口播必须是英文。
 
 这个 skill 追求的是真实感和分镜，不是固定场景记忆。每次都要根据当前产品重新选择人物、场景、动作和镜头，不能把上一次的厨房、人物、饮料或宠物场景当成默认模板。
 
@@ -62,14 +62,16 @@
 
 脚本表：
 
+脚本表可以保留中文表头，但 `屏幕字幕` 和 `旁白 / 口播` 两列必须输出自然英文。
+
 ```markdown
 | 时间 | 画面 | 屏幕字幕 | 旁白 / 口播 |
 |---|---|---|---|
-| 0-2s | ... | ... | "..." |
-| 2-5s | ... | ... | "..." |
-| 5-8s | ... | ... | "..." |
-| 8-11s | ... | ... | "..." |
-| 11-15s | ... | ... | "..." |
+| 0-2s | ... | No cold drinks? | "I just wanted something icy." |
+| 2-5s | ... | Pour it in | "Add your favorite drink mix." |
+| 5-8s | ... | Watch it turn slushy | "It gets thick and frosty right in the tank." |
+| 8-11s | ... | Pull and serve | "Now just dispense it into a glass." |
+| 11-15s | ... | Summer drinks at home | "This is the easiest little party drink." |
 ```
 
 ## 设计原则
@@ -81,6 +83,7 @@
 - 5 格故事版可以对应 15 秒，也可以支撑 30 秒脚本。
 - TikTok UGC 感优先，不做棚拍广告片。
 - 真实手机拍摄、自然光、普通生活场景。
+- 脚本文字里的屏幕字幕和旁白 / 口播必须是英文。
 - 默认不输出 FYPro 关键词，除非用户另问。
 - 如果用户另问关键词，关键词必须以“use the attached storyboard/reference frame”为前提，不允许模型重新生一个人物或场景。
 

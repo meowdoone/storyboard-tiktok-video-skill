@@ -39,6 +39,8 @@ Default output must contain only these three sections for each product:
 ## 3. 15 秒或者 30 秒视频脚本文字
 ```
 
+Hard language rule: the third section's script text must be in English. In the script table, all `屏幕字幕` and `旁白 / 口播` values must be natural English, even when surrounding instructions or section labels are Chinese.
+
 Do not include FYPro keywords, negative prompts, correction prompts, product-truth cards, long platform analysis, source notes, or extra recommendations by default.
 
 If the user asks for FYPro keywords later, provide them as a separate follow-up output.
@@ -161,16 +163,18 @@ The model should continue the current storyboard, not重新生一个人物/场�
 
 The third section should include a concise script table. Use 15 seconds by default; use 30 seconds when the user asks for it.
 
+Language rule: keep the table headers if desired, but write every screen subtitle and voiceover line in English. The `画面` column can be concise Chinese or English, but the actual script text that would appear on screen or be spoken must be English.
+
 For 15 seconds:
 
 ```markdown
 | 时间 | 画面 | 屏幕字幕 | 旁白 / 口播 |
 |---|---|---|---|
-| 0-2s | ... | ... | "..." |
-| 2-5s | ... | ... | "..." |
-| 5-8s | ... | ... | "..." |
-| 8-11s | ... | ... | "..." |
-| 11-15s | ... | ... | "..." |
+| 0-2s | ... | No cold drinks? | "I just wanted something icy." |
+| 2-5s | ... | Pour it in | "Add your favorite drink mix." |
+| 5-8s | ... | Watch it turn slushy | "It gets thick and frosty right in the tank." |
+| 8-11s | ... | Pull and serve | "Now just dispense it into a glass." |
+| 11-15s | ... | Summer drinks at home | "This is the easiest little party drink." |
 ```
 
 For 30 seconds:
@@ -178,15 +182,15 @@ For 30 seconds:
 ```markdown
 | 时间 | 画面 | 屏幕字幕 | 旁白 / 口播 |
 |---|---|---|---|
-| 0-3s | ... | ... | "..." |
-| 3-7s | ... | ... | "..." |
-| 7-12s | ... | ... | "..." |
-| 12-17s | ... | ... | "..." |
-| 17-23s | ... | ... | "..." |
-| 23-30s | ... | ... | "..." |
+| 0-3s | ... | No cold drinks? | "I just wanted something icy." |
+| 3-7s | ... | Pour it in | "Add your favorite drink mix." |
+| 7-12s | ... | Watch it turn slushy | "It gets thick and frosty right in the tank." |
+| 12-17s | ... | Pull and serve | "Now just dispense it into a glass." |
+| 17-23s | ... | Looks like a real slush | "The texture is the whole point." |
+| 23-30s | ... | Summer drinks at home | "This is the easiest little party drink." |
 ```
 
-The script must match the storyboard exactly. Do not introduce new people, rooms, claims, or product actions that are not in the storyboard. Use natural creator language, not brand-deck language.
+The script must match the storyboard exactly. Do not introduce new people, rooms, claims, or product actions that are not in the storyboard. Use natural English creator language, not brand-deck language.
 
 ## If The User Later Asks For FYPro Keywords
 
@@ -273,6 +277,7 @@ Before responding, check:
 - Does every product have a product image first?
 - Is there a storyboard image after the product image?
 - Is there a 15-second or 30-second script after the storyboard?
+- Are all screen subtitles and voiceover lines in English?
 - Did you avoid extra sections unless requested?
 - Is the video idea visually doable in TikTok/FYPro?
 - Are product claims safe and grounded?
