@@ -15,7 +15,7 @@ Turn a product into a TikTok-ready video storyboard package with exactly three d
 
 This skill is intentionally narrow. It is for product-facing TikTok/TK demo work where the user wants a clean handoff before video generation.
 
-Important: once a storyboard image exists, that storyboard becomes the visual source of truth. Do not invent a new person, outfit, room, product angle, or scene style in later script or keyword work.
+Important: this skill is about realism and storyboard logic, not memorizing one fixed scene. Pick the scene, person, action, and pacing from the current product and target platform. Once a storyboard image exists, that storyboard becomes the visual source of truth for that project only.
 
 ## When To Use
 
@@ -89,6 +89,15 @@ Never make the user infer the product from the storyboard alone.
 
 The storyboard is the most important part of this skill. It must not be a random lifestyle image or a generic ad mood board.
 
+The goal of the storyboard is to make a product video feel filmable:
+
+- real person or real hand behavior,
+- believable room/location for this product,
+- clear camera distance and angle,
+- visible product action,
+- one useful visual idea per frame,
+- low AI feel and low ad-polish.
+
 Default storyboard format:
 
 - one contact-sheet style image,
@@ -105,55 +114,48 @@ The 5-frame visual sequence should follow this logic:
 4. Output/use result: the product delivers the visible result.
 5. Payoff: creator/friend/family reaction or social-use ending.
 
-For a SLUSHi-style product, the correct visual chain is:
+For every product, derive the visual chain from what the product actually does. Do not reuse a previous kitchen/person/story from memory unless the current product naturally needs it.
 
-1. no ice / empty freezer hook,
-2. pour pink drink into the correct machine,
-3. red or pink slush forming inside the transparent horizontal vessel,
-4. slush dispensing from the front vertical spout into a glass,
-5. creator and friend drinking together with the same machine visible.
-
-Keep continuity locked:
+Keep continuity locked inside the current storyboard:
 
 - same product,
-- same person,
-- same room or environment,
+- same person only if the storyboard uses a person,
+- same room or environment only within this generated sequence,
 - same lighting family,
-- same drink/food/mess/object state where relevant.
+- same drink/food/mess/object state where relevant,
+- no scene carried over from previous projects unless the user asks for it.
 
 The storyboard image should feel like real phone footage, not a polished ad board.
 
 Product correctness is more important than image beauty. If the generated storyboard changes the product shape, color, spout, vessel, buttons, or key structure, regenerate the storyboard before writing the final script.
 
-## Storyboard Character Lock
+## Storyboard Realism And Continuity
 
-When a storyboard image already exists, treat these as locked:
+When a storyboard image already exists, treat these as locked for that project:
 
-- same person,
-- same face / age range / creator type,
-- same hairstyle,
-- same outfit,
-- same room,
-- same lighting,
-- same product,
-- same product position and color,
-- same drink/food/mess/result continuity.
+- the product shape and key parts,
+- the product color and scale,
+- the visible product-use action,
+- the selected creator or hands, if present,
+- the selected location, if present,
+- the lighting and phone-shot style,
+- the object/result continuity.
 
-Do not rewrite prompts as if starting from a blank canvas.
+Do not rewrite prompts as if starting from a blank canvas, and do not reuse the previous storyboard's person or room as a default.
 
 Bad keyword style:
 
 ```text
-A casual female creator in a white shirt makes a drink in a kitchen...
+A casual female creator in a kitchen uses the product...
 ```
 
 Good keyword style:
 
 ```text
-Use the attached storyboard as the visual reference. Keep the exact same creator, hairstyle, white t-shirt, blue jeans, kitchen counter, blue-gray slushie machine, pink lemonade color, and phone-shot framing from the storyboard. Animate only the small action in this shot...
+Use the attached storyboard as the visual reference. Preserve the current product shape, product action, chosen creator/hands, chosen location, lighting, and phone-shot framing from this storyboard. Animate only the small action in this shot...
 ```
 
-The model should continue the storyboard人物, not重新生一个人.
+The model should continue the current storyboard, not重新生一个人物/场景, and not copy a remembered scene from a different product.
 
 ## 15- or 30-Second Script Rules
 
@@ -193,12 +195,12 @@ FYPro keywords must be written as image-to-video continuation prompts based on t
 Use this structure:
 
 ```text
-Use the provided storyboard/reference frame as the visual source. Preserve the same creator, outfit, kitchen, product, lighting, drink color, and framing. Only animate: {small action}. Camera: handheld iPhone, slight natural movement. Do not change the person, product, room, outfit, or product shape.
+Use the provided storyboard/reference frame as the visual source. Preserve the current storyboard's product shape, product action, chosen creator/hands, chosen location, lighting, object continuity, and framing. Only animate: {small action}. Camera: handheld phone, slight natural movement. Do not change the product, action logic, or chosen visual setup.
 ```
 
-For each frame, mention the locked visual details from the storyboard and one small motion only.
+For each frame, mention the locked visual details from the current storyboard and one small motion only.
 
-Do not use prompts that invite the model to create a new person, such as "a casual creator" or "a female model" when a storyboard person already exists.
+Do not use prompts that invite the model to create a new person or a new generic location when a storyboard reference already exists.
 
 ## TikTok Style Defaults
 
@@ -209,7 +211,7 @@ Default settings:
 - realistic UGC
 - handheld iPhone look
 - natural daylight
-- lived-in room
+- believable real location chosen for the current product
 - low AI feel
 - one simple creator action per shot
 

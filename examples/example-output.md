@@ -28,5 +28,5 @@
 Only provide this section when the user asks for keywords.
 
 ```text
-Use the provided storyboard as the visual source. Preserve the exact same creator, outfit, kitchen, product shape, drink color, countertop, lighting, and handheld phone framing from the storyboard. Animate only the small action in each frame. Do not create a new person, new kitchen, new outfit, or new product design.
+Use the provided storyboard as the visual source. Preserve the current storyboard's product shape, product action, chosen creator/hands, chosen location, object continuity, lighting, and handheld phone framing. Animate only the small action in each frame. Do not create a new person, new room, or new product design.
 ```
