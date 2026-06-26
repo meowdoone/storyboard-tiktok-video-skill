@@ -1,6 +1,6 @@
 ---
 name: storyboard-tiktok-video
-description: Use when a user wants a TikTok/TK product-video storyboard from a product link, product image, product screenshot, ecommerce page, or short product description. The required output format is product image first, then storyboard image, then 15-second video script text. Especially useful for FYPro, StoreClaw, or image-to-video workflows where the user wants clear product truth before video generation.
+description: Use when a user wants a TikTok/TK product-video storyboard from a product link, product image, product screenshot, ecommerce page, or short product description. The required output format is product image first, then storyboard image, then 15-second or 30-second video script text. Especially useful for FYPro, StoreClaw, or image-to-video workflows where the user wants clear product truth before video generation.
 ---
 
 # 故事版的 TikTok 视频 Skill
@@ -11,7 +11,7 @@ Turn a product into a TikTok-ready video storyboard package with exactly three d
 
 1. 产品图
 2. 故事版
-3. 15 秒视频脚本文字
+3. 15 秒或者 30 秒视频脚本文字
 
 This skill is intentionally narrow. It is for product-facing TikTok/TK demo work where the user wants a clean handoff before video generation.
 
@@ -36,7 +36,7 @@ Default output must contain only these three sections for each product:
 ```text
 ## 1. 产品图
 ## 2. 故事版
-## 3. 15 秒视频脚本文字
+## 3. 15 秒或者 30 秒视频脚本文字
 ```
 
 Do not include FYPro keywords, negative prompts, correction prompts, product-truth cards, long platform analysis, source notes, or extra recommendations by default.
@@ -87,13 +87,31 @@ Never make the user infer the product from the storyboard alone.
 
 ## Storyboard Rules
 
-The storyboard should be a 5-frame visual sequence for a 15-second TikTok video:
+The storyboard is the most important part of this skill. It must not be a random lifestyle image or a generic ad mood board.
+
+Default storyboard format:
+
+- one contact-sheet style image,
+- 5 numbered vertical panels,
+- each panel is a 9:16 TikTok-style keyframe,
+- panels must form one continuous product-use sequence,
+- product appearance must be copied from the product image.
+
+The 5-frame visual sequence should follow this logic:
 
 1. Hook: everyday pain point or scroll-stopping moment.
-2. Context: person and environment make the need believable.
-3. Product entry: product appears naturally and is used.
-4. Usage/detail: close-up proof of what the product does.
-5. Payoff: realistic result or emotional close.
+2. Product entry: product appears naturally and is used.
+3. Product process/detail: close-up proof of what the product does.
+4. Output/use result: the product delivers the visible result.
+5. Payoff: creator/friend/family reaction or social-use ending.
+
+For a SLUSHi-style product, the correct visual chain is:
+
+1. no ice / empty freezer hook,
+2. pour pink drink into the correct machine,
+3. red or pink slush forming inside the transparent horizontal vessel,
+4. slush dispensing from the front vertical spout into a glass,
+5. creator and friend drinking together with the same machine visible.
 
 Keep continuity locked:
 
@@ -104,6 +122,8 @@ Keep continuity locked:
 - same drink/food/mess/object state where relevant.
 
 The storyboard image should feel like real phone footage, not a polished ad board.
+
+Product correctness is more important than image beauty. If the generated storyboard changes the product shape, color, spout, vessel, buttons, or key structure, regenerate the storyboard before writing the final script.
 
 ## Storyboard Character Lock
 
@@ -135,9 +155,11 @@ Use the attached storyboard as the visual reference. Keep the exact same creator
 
 The model should continue the storyboard人物, not重新生一个人.
 
-## 15-Second Script Rules
+## 15- or 30-Second Script Rules
 
-The third section should include a concise script table:
+The third section should include a concise script table. Use 15 seconds by default; use 30 seconds when the user asks for it.
+
+For 15 seconds:
 
 ```markdown
 | 时间 | 画面 | 屏幕字幕 | 旁白 / 口播 |
@@ -149,7 +171,20 @@ The third section should include a concise script table:
 | 11-15s | ... | ... | "..." |
 ```
 
-The script should match the storyboard exactly. Use natural creator language, not brand-deck language.
+For 30 seconds:
+
+```markdown
+| 时间 | 画面 | 屏幕字幕 | 旁白 / 口播 |
+|---|---|---|---|
+| 0-3s | ... | ... | "..." |
+| 3-7s | ... | ... | "..." |
+| 7-12s | ... | ... | "..." |
+| 12-17s | ... | ... | "..." |
+| 17-23s | ... | ... | "..." |
+| 23-30s | ... | ... | "..." |
+```
+
+The script must match the storyboard exactly. Do not introduce new people, rooms, claims, or product actions that are not in the storyboard. Use natural creator language, not brand-deck language.
 
 ## If The User Later Asks For FYPro Keywords
 
@@ -219,7 +254,7 @@ For multiple products from the same brand, repeat the three sections per product
 ### 2. 故事版
 ...
 
-### 3. 15 秒视频脚本文字
+### 3. 15 秒或者 30 秒视频脚本文字
 ...
 ```
 
@@ -235,7 +270,7 @@ Before responding, check:
 
 - Does every product have a product image first?
 - Is there a storyboard image after the product image?
-- Is there a 15-second script after the storyboard?
+- Is there a 15-second or 30-second script after the storyboard?
 - Did you avoid extra sections unless requested?
 - Is the video idea visually doable in TikTok/FYPro?
 - Are product claims safe and grounded?
