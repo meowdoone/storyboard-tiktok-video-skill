@@ -15,6 +15,8 @@ Turn a product into a TikTok-ready video storyboard package with exactly three d
 
 This skill is intentionally narrow. It is for product-facing TikTok/TK demo work where the user wants a clean handoff before video generation.
 
+Important: once a storyboard image exists, that storyboard becomes the visual source of truth. Do not invent a new person, outfit, room, product angle, or scene style in later script or keyword work.
+
 ## When To Use
 
 Use this skill when the user asks for:
@@ -40,6 +42,21 @@ Default output must contain only these three sections for each product:
 Do not include FYPro keywords, negative prompts, correction prompts, product-truth cards, long platform analysis, source notes, or extra recommendations by default.
 
 If the user asks for FYPro keywords later, provide them as a separate follow-up output.
+
+## No Autonomous Regeneration
+
+Do not generate new images just because the user asks for keywords, scripts, or video prompts.
+
+Only generate or regenerate images when the user explicitly asks for:
+
+- 故事版
+- 生图
+- 换一个图
+- 重画
+- 重新生成
+- 多给几张图
+
+If a storyboard already exists and the user asks for keywords or video text, write from the existing storyboard. Do not create a new visual direction.
 
 ## Product Intake
 
@@ -88,6 +105,36 @@ Keep continuity locked:
 
 The storyboard image should feel like real phone footage, not a polished ad board.
 
+## Storyboard Character Lock
+
+When a storyboard image already exists, treat these as locked:
+
+- same person,
+- same face / age range / creator type,
+- same hairstyle,
+- same outfit,
+- same room,
+- same lighting,
+- same product,
+- same product position and color,
+- same drink/food/mess/result continuity.
+
+Do not rewrite prompts as if starting from a blank canvas.
+
+Bad keyword style:
+
+```text
+A casual female creator in a white shirt makes a drink in a kitchen...
+```
+
+Good keyword style:
+
+```text
+Use the attached storyboard as the visual reference. Keep the exact same creator, hairstyle, white t-shirt, blue jeans, kitchen counter, blue-gray slushie machine, pink lemonade color, and phone-shot framing from the storyboard. Animate only the small action in this shot...
+```
+
+The model should continue the storyboard人物, not重新生一个人.
+
 ## 15-Second Script Rules
 
 The third section should include a concise script table:
@@ -103,6 +150,20 @@ The third section should include a concise script table:
 ```
 
 The script should match the storyboard exactly. Use natural creator language, not brand-deck language.
+
+## If The User Later Asks For FYPro Keywords
+
+FYPro keywords must be written as image-to-video continuation prompts based on the storyboard, not as fresh text-to-image prompts.
+
+Use this structure:
+
+```text
+Use the provided storyboard/reference frame as the visual source. Preserve the same creator, outfit, kitchen, product, lighting, drink color, and framing. Only animate: {small action}. Camera: handheld iPhone, slight natural movement. Do not change the person, product, room, outfit, or product shape.
+```
+
+For each frame, mention the locked visual details from the storyboard and one small motion only.
+
+Do not use prompts that invite the model to create a new person, such as "a casual creator" or "a female model" when a storyboard person already exists.
 
 ## TikTok Style Defaults
 
@@ -143,6 +204,8 @@ If the user says "换一个图", regenerate or replace the storyboard image unle
 
 Keep the same three-section output structure after replacing the image.
 
+After replacing a storyboard image, update all later scripts or keywords to refer to the new storyboard人物 and scene.
+
 ## Multi-Product Output
 
 For multiple products from the same brand, repeat the three sections per product:
@@ -176,4 +239,3 @@ Before responding, check:
 - Did you avoid extra sections unless requested?
 - Is the video idea visually doable in TikTok/FYPro?
 - Are product claims safe and grounded?
-

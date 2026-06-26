@@ -23,3 +23,10 @@
 | 8-11s | 冰沙从出料口进入玻璃杯 | Self-serve slush | "No blender, no ice pile, just pull." |
 | 11-15s | 创作者和朋友一起喝 | Summer drink hack | "Okay, this is dangerously fun." |
 
+## Optional Follow-Up: FYPro Keywords From This Storyboard
+
+Only provide this section when the user asks for keywords.
+
+```text
+Use the provided storyboard as the visual source. Preserve the exact same creator, outfit, kitchen, product shape, drink color, countertop, lighting, and handheld phone framing from the storyboard. Animate only the small action in each frame. Do not create a new person, new kitchen, new outfit, or new product design.
+```
