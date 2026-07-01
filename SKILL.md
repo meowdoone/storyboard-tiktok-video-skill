@@ -83,7 +83,9 @@ If the user gives a brand and asks for more products, find 2-3 suitable products
 
 The first section must show or link the product image before any storyboard.
 
-Prefer official product images from the brand site or ecommerce page. If the image cannot be fetched, use the best available product screenshot or generated reference image, and label it clearly.
+Step 1 only needs to extract or select a clear product image. Do not produce product-truth cards, long product analysis, claim analysis, FYPro keywords, video prompts, or extra notes in this section.
+
+Prefer official product images from the brand site or ecommerce page. Use the clearest available product image, not a small share-card thumbnail. If the image cannot be fetched, use the best available product screenshot or generated reference image, and label it clearly.
 
 Never make the user infer the product from the storyboard alone.
 
