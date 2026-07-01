@@ -89,6 +89,8 @@ Prefer official product images from the brand site or ecommerce page. Use the cl
 
 Never make the user infer the product from the storyboard alone.
 
+Hard gate: If the current tool cannot use the original product image as a visual reference, input image, mask, or overlay/composite layer, do not generate a product-containing storyboard image. Stop and report the tool limitation, or output only a non-product scene plan until a workflow can preserve the original product image.
+
 ## Storyboard Rules
 
 The storyboard is the most important part of this skill. It must not be a random lifestyle image or a generic ad mood board.
@@ -109,6 +111,8 @@ Default storyboard format:
 - each panel is a 9:16 TikTok-style keyframe,
 - panels must form one continuous product-use sequence,
 - product appearance must be copied from the product image.
+
+Do not replace the product image with a text prompt that describes the product. For products whose package, logo, shape, label, material, or model identity matters, the original product image must be used as the visual source or overlay whenever the storyboard shows the product.
 
 The 5-frame visual sequence should follow this logic:
 
@@ -317,4 +321,5 @@ Before responding, check:
 - Did you avoid extra sections unless requested?
 - Is the video idea visually doable in TikTok/FYPro?
 - Are product claims safe and grounded?
+- Was the original product image used as the visual reference or overlay for any product-containing storyboard image?
 - Did the storyboard pass the anti-AI-feel rejection criteria?
