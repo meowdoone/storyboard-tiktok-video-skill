@@ -131,6 +131,19 @@ The storyboard image should feel like real phone footage, not a polished ad boar
 
 Product correctness is more important than image beauty. If the generated storyboard changes the product shape, color, spout, vessel, buttons, or key structure, regenerate the storyboard before writing the final script.
 
+## Anti-AI-Feel Generation Contract
+
+Every storyboard image prompt must include a strict low-polish phone-video contract. This contract is mandatory, not optional style guidance.
+
+- The storyboard must look like frames pulled from a handheld phone video, not a commercial photo shoot.
+- Product use must be based on actions the product can visibly support. If the product has no visible physical result, do not invent one.
+- At least two panels must include natural cropping, hand occlusion, off-center product placement, motion softness, focus falloff, or ordinary background clutter.
+- The product may be clear, but it must not become a perfect centered packshot in every panel.
+- Lighting must stay ordinary and imperfect. Avoid golden ad lighting, studio lighting, luxury product lighting, and overly clean lifestyle lighting.
+- Surfaces, hands, rooms, and props must feel lived-in and physically real. Avoid plastic skin, showroom rooms, and perfectly arranged props.
+- Text inside generated images must be avoided unless it is required by the product reference. Any non-essential label or screen text should be blurred, partial, or unreadable.
+- The final storyboard must prioritize believable filming conditions over beauty, symmetry, and polish.
+
 ## Storyboard Realism And Continuity
 
 When a storyboard image already exists, treat these as locked for that project:
@@ -219,6 +232,17 @@ Default settings:
 - low AI feel
 - one simple creator action per shot
 
+The default image-generation prompt must also enforce:
+
+- handheld phone frame,
+- imperfect composition,
+- ordinary indoor or outdoor light,
+- natural hand or body interruption,
+- product not always centered,
+- mild motion softness or focus imperfection,
+- real surface texture,
+- no polished ad-board look.
+
 Prefer:
 
 - ordinary kitchens, living rooms, bathrooms, bedrooms, entryways, yards,
@@ -238,6 +262,16 @@ Avoid:
 - split-screen before/after unless explicitly requested,
 - impossible motion,
 - claims beyond product evidence.
+
+Reject and regenerate the storyboard before final delivery if it has:
+
+- product centered and hero-lit in most panels,
+- perfect glossy commercial composition,
+- fake readable product labels or screen text,
+- overly clean rooms or props,
+- plastic-looking hands or people,
+- invented visible results for a product that cannot show them,
+- a payoff scene that implies medical, health, beauty, or performance claims beyond product evidence.
 
 ## Replacement Image Requests
 
@@ -281,3 +315,4 @@ Before responding, check:
 - Did you avoid extra sections unless requested?
 - Is the video idea visually doable in TikTok/FYPro?
 - Are product claims safe and grounded?
+- Did the storyboard pass the anti-AI-feel rejection criteria?
